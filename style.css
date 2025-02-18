@@ -1,0 +1,208 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Nunito";
+    color: #ffff99;
+}
+body {
+    background-image: url(./background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#raceSelection{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 10vh;
+}
+#gameContainer{
+    margin-top: 5%;
+}
+#miningTabContent{
+    text-align: center;
+}
+.raceButton{
+    width: 70%;
+    font-size: 15px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+.racePeople{
+    background-image: url(./people.png);
+    background-size: cover;
+    background-position: center;
+}
+.raceDemon{
+    background-image: url(./demon.png);
+    background-size: cover;
+    background-position: center;
+}
+.raceElement{
+    background-image: url(./element.png);
+    background-size: cover;
+    background-position: center;
+}
+.raceButton:hover{
+    transform: scale(1.1);
+}
+.raceButton:active{
+    transform: scale(0.95);
+}
+/* Верхние кнопки (вкладки) */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    margin-bottom: 15%;
+}
+
+.tabButton {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-image: url(./knopkiUpgrade.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.tabButton:hover {
+    filter: brightness(50%)
+}
+
+.tabButton.active {
+    filter: brightness(40%)
+}
+
+/* Персонаж в центре */
+#raceImage {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 20px auto;
+}
+
+/* Флаг (если нужен) */
+#flagImage {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Уровень под персонажем */
+#level {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Контейнер для энергии */
+#energyContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Расстояние между иконкой и текстом */
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Иконка энергии */
+#energyIcon {
+    width: 30px;
+    height: auto;
+}
+
+#coinIcon {
+    width: 30px;
+    height: auto;
+}
+
+#raceImage {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+#raceImage:hover {
+    transform: scale(1.1);
+}
+
+#raceImage:active {
+    transform: scale(0.95);
+}
+
+/* Затемнение картинки, если энергия закончилась */
+#raceImage[style*="opacity: 0.5"] {
+    cursor: not-allowed;
+}
+.telegrambutton{
+    width: 30%;
+    height: 10%;
+}
+
+/* Монеты и энергия (по центру) */
+#coins, #energy {
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px;
+}
+
+/* Контейнер для монет и энергии */
+#statsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Кнопки улучшений */
+#upgradesTabContent button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background-image: url(./knopkiUpgrade.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#upgradesTabContent button:hover {
+    filter: brightness(50%)
+}
+
+/* Социальные сети и дроп */
+#socialMediaTabContent, #dropTabContent, #leaderboardTabContent {
+    padding: 20px;
+}
+
+/* Текст "Coming Soon" */
+#leaderboardTabContent p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Race Selection Screen -->
+    <div id="raceSelection">
+        <h2>Выберите свою расу</h2>
+        <button class="raceButton racePeople" data-race="Castle"></button>
+        <button class="raceButton raceDemon" data-race="Inferno"></button>
+        <button class="raceButton raceElement" data-race="Conflux"></button>
+    </div>
+
+    <!-- Game Tabs -->
+    <div id="gameContainer" style="display: none;">
+        <div class="tabs">
+            <button class="tabButton" id="miningTab">Ферма</button>
+            <button class="tabButton" id="upgradesTab">Улучшения</button>
+            <button class="tabButton" id="socialMediaTab">Медиа</button>
+            <button class="tabButton" id="dropTab">Дропы</button>
+        </div>
+
+        <!-- Mining Tab -->
+        <div id="miningTabContent" class="tabContent" style="display: none;">
+            <img id="raceImage" src="" alt="Character">
+            <p id="level">Level: 1</p>
+
+            <div id="coinContainer">
+                <img id="coinIcon" src="./gold.png" alt="Gold">
+                <p id="coins">Gold: 0</p>
+            </div>  
+
+            <div id="energyContainer">
+                <img id="energyIcon" src="./vremya.png" alt="Energy">
+                <p id="energy">Energy: 10/10</p>
+            </div>            
+
+            <button id="clickButton" style="display: none;"></button>
+            <p id="coinsPerClickDisplay">Coins per Click: 1</p>
+        </div>
+        
+        <!-- Вкладка улучшений -->
+        <div id="upgradesTabContent" class="tabContent" style="display: none;">
+            <button id="upgradeButton">Поднять уровень (<span id="upgradeCost">10</span> золота)</button>
+            <button id="coinUpgradeButton">Увеличить золота за клик (<span id="coinUpgradeCost">20</span> золота)</button>
+            <button id="energyUpgradeButton">Увеличить количство энергии (<span id="energyUpgradeCost">30</span> золота)</button>
+            <button id="energyRechargeUpgradeButton">Ускорить регенерацию ходов(<span id="energyRechargeCost">50</span> золота)</button>
+        </div>
+
+
+        <!-- Social Media Tab -->
+        <div id="socialMediaTabContent" class="tabContent" style="display: none;">
+            <h2>Follow us on Social Media</h2>
+            <ul>
+                <li><a href="https://t.me/heroes3_tap"><img class="telegrambutton" src="./telegrambam.jpg" alt="telegram"></a></li>
+            </ul>
+        </div>
+
+        <!-- Drop Tab -->
+        <div id="dropTabContent" class="tabContent" style="display: none;">
+            <h2>Что такое Airdrop</h2>
+            <p>🎁 Airdrop – ваш шанс получить награды!  
+
+                Мы запускаем собственный коин, и его распределение полностью прозрачно:  <br>
+                <br>
+                🔒 70% от всего объёма токенов замораживаются для устойчивого развития проекта:  <br>
+                  - 10% – направляются на дальнейшее развитие игры и инфраструктуры.  <br>
+                  - 60% – выделяются на Airdrop, который будет распределён среди активных участников!  <br>
+                  <br>
+                Airdrop состоится приблизительно через месяц после лаунча монеты<br>
+                <br>
+                💎 Оставшиеся 30% остаются в распоряжении сообщества и будут использоваться для стейкинга, чтобы каждый игрок мог зарабатывать, просто удерживая монеты.</p>
+        </div>
+
+        <!-- Leaderboard Tab -->
+        <div id="leaderboardTabContent" class="tabContent" style="display: none;">
+            <h2>Leaderboard</h2>
+            <p>Coming Soon</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
