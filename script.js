@@ -17,10 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const coinsPerClickDisplay = document.getElementById("coinsPerClickDisplay");
 
     const raceImage = document.getElementById("raceImage");
-    const flagImage = document.getElementById("flagImage");
 
     const clickButton = document.getElementById("clickButton");
     const upgradeButton = document.getElementById("upgradeButton");
+    const coinUpgradeButton = document.getElementById("coinUpgradeButton");
+    const energyUpgradeButton = document.getElementById("energyUpgradeButton");
+    const energyRechargeUpgradeButton = document.getElementById("energyRechargeUpgradeButton");
 
     const upgradeCostDisplay = document.getElementById("upgradeCost");
 
@@ -118,9 +120,47 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("level", level);
             localStorage.setItem("coinsPerClick", coinsPerClick);
             localStorage.setItem("totalCoins", totalCoins);
+            upgradeCostDisplay.textContent = 10 * level; // Обновляем цену
             updateDisplay();
         }
     });
+    
+    coinUpgradeButton.addEventListener("click", () => {
+        const cost = 20 * coinsPerClick;
+        if (totalCoins >= cost) {
+            totalCoins -= cost;
+            coinsPerClick++;
+            localStorage.setItem("coinsPerClick", coinsPerClick);
+            localStorage.setItem("totalCoins", totalCoins);
+            coinUpgradeButton.textContent = `Улучшить за ${20 * coinsPerClick}`; // Обновляем цену
+            updateDisplay();
+        }
+    });
+    
+    energyUpgradeButton.addEventListener("click", () => {
+        const cost = 30 * maxEnergy;
+        if (totalCoins >= cost) {
+            totalCoins -= cost;
+            maxEnergy += 5;
+            localStorage.setItem("maxEnergy", maxEnergy);
+            localStorage.setItem("totalCoins", totalCoins);
+            energyUpgradeButton.textContent = `Улучшить энергию за ${30 * maxEnergy}`; // Обновляем цену
+            updateDisplay();
+        }
+    });
+    
+    energyRechargeUpgradeButton.addEventListener("click", () => {
+        const cost = 50 * energyRechargeRate;
+        if (totalCoins >= cost) {
+            totalCoins -= cost;
+            energyRechargeRate++;
+            localStorage.setItem("energyRechargeRate", energyRechargeRate);
+            localStorage.setItem("totalCoins", totalCoins);
+            energyRechargeUpgradeButton.textContent = `Улучшить восстановление за ${50 * energyRechargeRate}`; // Обновляем цену
+            updateDisplay();
+        }
+    });
+    
 
     setInterval(restoreEnergy, 5000);
 
